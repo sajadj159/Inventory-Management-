@@ -2,6 +2,7 @@ using System;
 using FluentAssertions;
 using IM.Domain.Exceptions;
 using Xunit;
+using Xunit.Categories;
 
 namespace IM.Domain.Tests.Unit
 {
@@ -12,7 +13,9 @@ namespace IM.Domain.Tests.Unit
         {
             _inventoryTestBuilder = new InventoryTestBuilder();
         }
+
         [Fact]
+        [UnitTest]
         public void Constructor_ShouldCreateANewInventory()
         {
             //Arrange
@@ -29,6 +32,7 @@ namespace IM.Domain.Tests.Unit
         }
 
         [Theory]
+        [UnitTest]
         [InlineData("")]
         [InlineData(null)]
         public void Constructor_ShouldReturnException_WhenProductIs(string nullOrWitheSpace)
@@ -42,6 +46,7 @@ namespace IM.Domain.Tests.Unit
         }
 
         [Theory]
+        [UnitTest]
         [InlineData(0)]
         [InlineData(-1)]
         public void Constructor_ShouldReturnException_WhenUnitPriceIs(double zeroOrLess)

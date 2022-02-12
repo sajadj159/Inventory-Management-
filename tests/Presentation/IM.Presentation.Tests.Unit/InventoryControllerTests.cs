@@ -2,6 +2,7 @@ using IM.Application.Contract;
 using IM.Presentation.Controllers;
 using NSubstitute;
 using Xunit;
+using Xunit.Categories;
 
 namespace IM.Presentation.Tests.Unit
 {
@@ -17,6 +18,7 @@ namespace IM.Presentation.Tests.Unit
         }
 
         [Fact]
+        [UnitTest]
         public void Create_ShouldCallDefineOnApplication()
         {
             //Arrange
